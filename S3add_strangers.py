@@ -1,6 +1,7 @@
 # How to run the image recognition model
 import csv
 import boto3
+from datetime import datetime
 
 with open('AWS creds.csv','r') as input:
     next(input)
@@ -8,9 +9,13 @@ with open('AWS creds.csv','r') as input:
     for line in reader:
         access_key_id = line[2]
         secret_access_key = line[3]
-name=input("Enter the user name")
-photo= './images/{}.jpg'.format(name)
-faces.append(name)
+# datetime object containing current date and time
+now = datetime.now()
+
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+# Indexing each staranger with current date and  time which must be unique
+photo= './images/'.format(dt_string)
+faces.append(dt_string)
 s3= boto3.client('s3',
                     aws_access_key_id= access_key_id ,
                         aws_secret_access_key=secret_access_key, region_name='ap-south-1')
