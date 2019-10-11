@@ -16,3 +16,18 @@ with open(source_photo, 'rb') as source_image:
     source_bytes = source_image.read()
 with open(target_photo, 'rb') as source_image:
     target_bytes = source_image.read()
+
+response = client.compare_faces(SourceImage={
+        'Bytes': source_bytes},
+    TargetImage={
+        'Bytes': target_bytes}
+                )
+# Use Attributes parameter for details other than default values
+#print(response)
+#print(type(response))
+#print(response['Labels'][0]['Confidence'])
+for key,value in response.items():
+    if key in ('FaceMatches','UnmatchedFaces'):
+        print(key)
+        for att in value:
+            print(att)
