@@ -1,6 +1,7 @@
 import csv
 import boto3
 #import S3add_trust as S3tr
+
 with open('AWScreds.csv','r') as input:
     next(input)
     reader= csv.reader(input)
@@ -19,7 +20,7 @@ with open(source_photo, 'rb') as source_image:
 f= open("trusted.txt","r")
 if f.mode== "r":
     contents = f.read()
-    response = client.compare_faces(SourceImage={
+    response = client.compare_faces(SimilarityThreshold=85,SourceImage={
             'Bytes': source_bytes},
             TargetImage={
             'S3Object': {
@@ -37,3 +38,15 @@ if f.mode== "r":
             print(key)
             for att in value:
                 print(att)
+   # x=key.get("Similarity")
+    #print(x)
+    '''for key,value in response.items():
+        if key in ('FaceMatches'):
+            string_key = dict([(str(k),v) for k,v in key.items()])
+            print(string_key)'''
+    if(len(response['FaceMatches'])>0):
+        for facematch in response['FaceMatches']:
+            conf= str(facematch['Face']['Confidence'])
+            print("Confidence level is ",conf)
+    else:
+        print("Unknown Person")

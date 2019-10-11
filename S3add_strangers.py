@@ -14,9 +14,9 @@ now = datetime.now()
 
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 # Indexing each staranger with current date and  time which must be unique
-photo= './images/tar.jpg'
+photo= './images/tar.png'
 faces.append(dt_string)
 s3= boto3.client('s3',
                     aws_access_key_id= access_key_id ,
                         aws_secret_access_key=secret_access_key, region_name='ap-south-1')
-s3.upload_file('./images/bus.jpg','stranger-members','{}.jpg').format(dt_string)
+s3.upload_file('./images/bus.jpg','stranger-members','{}.png').format(dt_string)
