@@ -7,7 +7,7 @@ with open('AWScreds.csv','r') as input:
     for line in reader:
         access_key_id = line[2]
         secret_access_key = line[3]
-source_photo= './images/tar.png'
+source_photo= './images/tar.jpg'
 #target_photo= './images/tar.jpg'
 client= boto3.client('rekognition',
                     aws_access_key_id= access_key_id ,
@@ -24,7 +24,7 @@ if f.mode== "r":
             TargetImage={
             'S3Object': {
                     'Bucket': 'trusted-members',
-                    'Name': 'dipto.png'
+                    'Name': 'dipto.jpg'
                     }
                 }
                     )

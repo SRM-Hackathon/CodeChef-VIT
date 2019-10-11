@@ -12,7 +12,7 @@ with open('AWScreds.csv','r') as input:
 # take user name to add
 #name=input("Enter the user name")
 faces=[]
-photo= './images/src.png'
+photo= './images/src.jpg'
 # Taking photo directory
 #name= "dipto"
 faces.append(trusted)
@@ -22,7 +22,7 @@ print(trusted)
 s3= boto3.client('s3',
                     aws_access_key_id= access_key_id ,
                         aws_secret_access_key=secret_access_key, region_name='ap-south-1')
-s3.upload_file('./images/src.png','trusted-members','{}.png'.format(trusted))
+s3.upload_file('./images/src.jpg','trusted-members','{}.jpg'.format(trusted))
 f= open('trusted.txt','a+')
 f.write("{}\n".format(trusted))
 f.close()
