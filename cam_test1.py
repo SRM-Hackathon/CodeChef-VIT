@@ -15,7 +15,9 @@ while True:
     if(GPIO.input(PIR_input)):
         GPIO.output(LED, GPIO.HIGH)
 
-        os.system('fswebcam --no-banner image.jpg')
+        os.system('fswebcam --no-banner src.jpg')
+        print('made photo')
+        os.system('sudo scp src.jpg 192.168.43.254:/CodeChef-VIT/images/src.jpg')
 
     else:
         GPIO.output(LED, GPIO.LOW)
