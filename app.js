@@ -7,6 +7,9 @@ const session = require('express-session');
 
 const app = express();
 
+// Set Static Folder
+app.use(express.static('./public'));
+
 // Passport.js Configuration
 require('./config/passport')(passport);
 
