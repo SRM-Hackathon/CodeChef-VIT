@@ -2,7 +2,7 @@
 # CodeChef-VIT
 SRM HACKATHON 4.0
 
-Home-Security-System :video_camera:
+Home-Security-System  :video_camera:
 
 ## What is HomeGuard?
 HomeGuard is an intelligent security system that helps in securing our houses and offices against potential threats such as burglary,  kidnapping or any other threat of that sort.
@@ -39,11 +39,12 @@ You just need to run our website!!
 
 ## Services
 1. Amazon Web Services
-2. Twilio
+2. Twilio  :envelope:
 
 ## Modules/Libraries Used
 1. Ansible
 2. bcrypt
+3. boto3
 
 ## Hardware Needs
 1. PIR Sensor
@@ -52,4 +53,11 @@ You just need to run our website!!
 4. Raspberry PI
 5. WebCam
 
+## References 
+- [boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [S3 configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html)
+- [AWS Rekognition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html)
 
+
+
+Please give a :star:  to show your support if you like this repository :wink:
