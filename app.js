@@ -7,10 +7,10 @@ const session = require('express-session');
 
 const app = express();
 
-// Passport Config
+// Passport.js Configuration
 require('./config/passport')(passport);
 
-// DB Config
+// DataBase Config
 const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
