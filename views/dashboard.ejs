@@ -1,30 +1,83 @@
-<!-- <h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= user.name %></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a> -->
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Dashboard</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			background-size: 100%;
+                            background-image: url("background1.jpg");
+                            background-size: cover;
+		}
+	</style>
 </head>
 <body>
-		<button id="signout_button" style="position: absolute; top: 10px; right: 10px;" class="btn btn-danger log_position" onclick="window.location.href='/users/logout'">Sign Out</button>
-		<h1 style="text-align: center;">Dashboard</h1>
+		<button id="signout_button" style="position: absolute; top: 10px; right: 10px;margin-top: 1%" class="btn btn-danger log_position btn-lg" onclick="window.location.href='/users/logout'">Sign Out</button>
+		<h1 style="text-align: center; color: #0F1B4F;margin-top: 2%; font-size:400%">Dashboard</h1>
 		<br>	
-		<p class="lead mb-3">Welcome <%= user.name %></p>
-		<button type="button" class="btn btn-secondary btn-lg btn-block">Trusted Neighbours</button>	
+		<p class="lead mb-3" style="font-size: 20		0%">Welcome <%= user.name %></p>
 		<br>	
-		<button type="button" class="btn btn-secondary btn-lg btn-block">Contact Neighbours</button>
-		<br>	
-		<button type="button" class="btn btn-secondary btn-lg btn-block">Reach Home</button>	
-		<br>	
-		<button type="button" class="btn btn-secondary btn-lg btn-block">Emergency</button>	
-		<br>	
+		<div class="accordion" id="accordionExample">
+
+      <h2 class="mb-0">
+        <button class="btn btn-outline-light btn-lg btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background: #0F1B4F; color: white;">
+          Modify Trusted Neighbours
+        </button>
+      </h2>
 
 
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Add Neighbours</button>
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Remove Neighbours</button>
+    </div>
+  </div>
+  </div>	
+		<br>
+<div class="accordion" id="accordionExample">
+
+      <h2 class="mb-0">
+        <button class="btn btn-outline-light btn-lg btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapse" style="background: #0F1B4F; color: white;">
+          Contact Neighbours
+        </button>
+      </h2>
+
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+      	<button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Priyank Kaushik</button>
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Rajat Sablok</button>
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Mehul Agarwal</button>
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Dipto Chakraborty</button>
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Sahaaj Chawla</button>
+    </div>
+  </div>
+  </div>		
+		<br>	
+		<button class="btn btn-outline-light btn-lg btn-block" type="button" style="background: #0F1B4F; color: white;">
+          Reach Home
+        </button>	
+		<br>	
+		<div class="accordion" id="accordionExample">
+
+      <h2 class="mb-0">
+        <button class="btn btn-outline-light btn-lg btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" style="background: #0F1B4F; color: white;">Emergency
+        </button>
+      </h2>
+
+
+    <div id="collapseFour" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Call Police</button>
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Call Ambulance</button>
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block" style=" background: white;color: #0F1B4F" style="border: 1px solid #0F1B4F">Call Fire-Brigade</button>
+    </div>
+  </div>
+  </div>	
+		<br>	
+	<h1 style="position: absolute; text-align: center; color: white;right: 1%;bottom: 1%;font-size: 600%">HomeGUARD</h1>
+
+ 		
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
