@@ -1,5 +1,6 @@
 import csv
 import boto3
+import subprocess as sp
 #import S3add_trust as S3tr
 
 with open('AWScreds.csv','r') as input:
@@ -20,7 +21,7 @@ with open(source_photo, 'rb') as source_image:
 f= open("trusted.txt","r")
 if f.mode== "r":
     contents = f.read()
-    response = client.compare_faces(SimilarityThreshold=85,SourceImage={
+    response = client.compare_faces(SimilarityThreshold=90,SourceImage={
             'Bytes': source_bytes},
             TargetImage={
             'S3Object': {
@@ -33,11 +34,11 @@ if f.mode== "r":
 #print(response)
 #print(type(response))
 #print(response['Labels'][0]['Confidence'])
-    for key,value in response.items():
+    '''for key,value in response.items():
         if key in ('FaceMatches','UnmatchedFaces'):
             print(key)
             for att in value:
-                print(att)
+                print(att)'''
    # x=key.get("Similarity")
     #print(x)
     '''for key,value in response.items():
@@ -48,5 +49,7 @@ if f.mode== "r":
         for facematch in response['FaceMatches']:
             conf= str(facematch['Face']['Confidence'])
             print("Confidence level is ",conf)
+            sp.getoutput("ansible-playbook --vault-password-file='/CodeChef-VIT/.secret'  msg.yml")
     else:
         print("Unknown Person")
+        sp.getoutput("python S3add_strangers.py")

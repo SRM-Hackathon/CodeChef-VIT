@@ -19,4 +19,5 @@ faces.append(dt_string)
 s3= boto3.client('s3',
                     aws_access_key_id= access_key_id ,
                         aws_secret_access_key=secret_access_key, region_name='ap-south-1')
-s3.upload_file('./images/bus.jpg','stranger-members','{}.png').format(dt_string)
+s3.upload_file('./images/tar.jpg','stranger-members','{}.png').format(dt_string)
+p.getoutput("ansible-playbook --vault-password-file='/CodeChef-VIT/.secret'  unmsg.yml")

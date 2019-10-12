@@ -1,0 +1,10 @@
+- hosts: localhost
+  vars_files:
+        - creds.yml
+  tasks:
+        - twilio:
+                msg: "Dipto is at the door"
+                account_sid: "{{p}}"
+                auth_token: "{{q}}"
+                from_number: "+16466812474"
+                to_number: "+919003755024"
