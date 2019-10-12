@@ -7,6 +7,7 @@ Home-Security-System
 ## What is HomeGuard?
 HomeGuard is an intelligent security system that helps in securing our houses and offices against potential threats such as burglary,  kidnapping or any other threat of that sort.
 
+
 ## Basic Functionalities-
 1. Intruder Alert
 2. Smoke and Gas Detector
@@ -22,7 +23,6 @@ HomeGuard is an intelligent security system that helps in securing our houses an
 5. If the image doesn't match then the user gets notified about the unknown person.
 
 ## How to run?
-You know what it is very difficult to run our project.
 You just need to run our website!!
 
 ## Frameworks Used
@@ -33,7 +33,7 @@ You just need to run our website!!
 
 ## Services
 1. Amazon Web Services
-2. Twillio
+2. Twilio
 
 ## Modules/Libraries Used
 1. Ansible
