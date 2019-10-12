@@ -24,7 +24,7 @@ HomeGuard is an intelligent security system that helps in securing our houses an
 3. The picture is compared with the pictures of trusted persons in our database.
 4. We use Machine Learning Algorithm on AWS to compare the pictures.  
 5. If the image matches then the user gets a notification that XYZ person is present at his doorstep.
-5. If the image doesn't match then the user gets notified about the unknown person.
+6. If the image doesn't match then the user gets notified about the unknown person.
 
 ````
 
